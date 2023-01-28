@@ -21,9 +21,10 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{6b365c3f-7632-49bd-ba23-d8e7237e38cc}</ProjectGuid>
-    <RootNamespace>Palindrom</RootNamespace>
+    <ProjectGuid>{7f4f969e-cf4a-4573-9a79-0c6ca6e64e98}</ProjectGuid>
+    <RootNamespace>LongestCommonPrefix</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>03_Longest_Common_Prefix</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -139,7 +140,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Palindrom.cpp" />
+    <ClCompile Include="Longest_Common_Prefix.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

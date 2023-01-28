@@ -5,10 +5,8 @@ You may assume that each input would have EXACTLY ONE solution, and you may not 
 
 You can return the answer in any order..
 */
+#include "TwoSum.h"
 
-#include <iostream>
-#include <vector>
-#include <map>
 
 class Solution {
 public:
