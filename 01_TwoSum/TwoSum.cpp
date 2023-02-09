@@ -45,13 +45,4 @@ std::vector<int> Solution::twoSum(const std::vector<int>& nums, int target) {
 
 
 
-int main()
-{
-    std::vector<int> v{ -1,-2,-3,-4,-5 };
-    for (int e : Solution::twoSum(v, -8))
-    {
-        std::cout<<e<<" ";
-    }
-    return 0;
-  
-}
+
