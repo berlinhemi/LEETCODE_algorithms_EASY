@@ -2,7 +2,9 @@
 #include <iostream>
 #include <vector>
 #include <map>
-class Solution {
+class Solution
+{
 public:
-    std::vector<int> twoSum(const std::vector<int>& nums, int target);
+    static std::vector<int> twoSum(const std::vector<int>& nums, int target);
 };
+
