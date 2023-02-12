@@ -1,5 +1,7 @@
-﻿// Longest_Common_Prefix.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
-//
+﻿/*
+Write a function to find the longest common prefix string amongst an array of strings.
+If there is no common prefix, return an empty string "".
+*/
 
 #include <iostream>
 #include <algorithm>
@@ -15,13 +17,16 @@ public:
     };
 
     std::string longestCommonPrefix(std::vector<std::string>& strs) {
+        //TODO: change to lambda
+        if (strs.empty())
+        {
+            return "";
+        }
         std::sort(strs.begin(), strs.end(), length());
         std::string shortest = strs.front();
         int min_len = INT32_MAX;
-        for (int i = 0; i < strs.size(); i++)
+        for (int i = 1; i < strs.size(); i++)
         {
-            if (i == 0)
-                continue; //skip first (shortest) element
             const char* shortest_ptr = shortest.c_str();
             const char* ptr = strs[i].c_str();
             int curr_len = 0;
