@@ -11,6 +11,15 @@ TEST(Palindrom, PalindromTrue) {
 
 }
 
+TEST(Palindrom, NotAPalindrom) {
+
+	Solution s;
+
+	EXPECT_EQ(s.isPalindrome(123), false);
+	EXPECT_EQ(s.isPalindrome(12), false);
+	EXPECT_EQ(s.isPalindrome(12214), false);
+
+}
 
 int main(int argc, char** argv)
 {
