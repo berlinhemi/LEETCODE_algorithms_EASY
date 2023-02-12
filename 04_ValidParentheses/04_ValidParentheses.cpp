@@ -22,7 +22,7 @@ bool Solution::isValid(std::string s)
 
 	for (char e : s)
 	{
-		/*if (prev == '(')
+		if (prev == '(')
 			if ( e == ']' || e == '}')
 				return false;
 
@@ -32,7 +32,7 @@ bool Solution::isValid(std::string s)
 
 		if (prev == '{')
 			if (e == ')' || e == ']')
-				return false;*/
+				return false;
 		total++;
 		switch (e)
 		{
