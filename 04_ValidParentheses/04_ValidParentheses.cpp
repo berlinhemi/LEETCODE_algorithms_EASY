@@ -9,6 +9,38 @@ Every close bracket has a corresponding open bracket of the same type.
 */
 #include "04_ValidParentheses.h"
 
+
+bool Solution::NextBraceIsValid(char prev, char next)
+{
+	switch (prev)
+	{
+		case '(':
+		{
+			if (next == ']' || next == '}')
+				return false;
+			break;
+		}
+		case '[':
+		{
+			if (next == ')' || next == '}')
+				return false;
+			break;
+		}
+		case '{':
+		{
+			if (next == ')' || next == ']')
+				return false;
+			break;
+		}
+		default:
+		{
+			throw std::runtime_error("invalide brace type obtained");
+			break;
+		}
+	}
+	
+	return true;
+}
 bool Solution::isValid(std::string s)
 {
 	int total = 0;
@@ -22,18 +54,13 @@ bool Solution::isValid(std::string s)
 
 	for (char e : s)
 	{
-		if (prev == '(')
-			if ( e == ']' || e == '}')
-				return false;
-
-		if (prev == '[')
-			if (e == ')' || e == '}')
-				return false;
-
-		if (prev == '{')
-			if (e == ')' || e == ']')
-				return false;
 		total++;
+
+		if (!NextBraceIsValid(prev, e))
+		{
+			return false;
+		}
+		
 		switch (e)
 		{
 			case '(':
