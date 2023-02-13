@@ -32,24 +32,26 @@ bool Solution::NextBraceIsValid(char prev, char next)
 				return false;
 			break;
 		}
-		default:
+		/*default:
 		{
 			throw std::runtime_error("invalide brace type obtained");
 			break;
-		}
+		}*/
 	}
 	
 	return true;
 }
 bool Solution::isValid(std::string s)
 {
+	char prev = '-';
+
 	int total = 0;
-	char prev = 0;
-	int braces = 0;
-	int between_braces = 0;
-	int curly_braces = 0;
-	int between_curly_braces = 0;
+	int round_braces = 0;
 	int square_brackets = 0;
+	int curly_braces = 0;
+
+	int between_round_braces = 0;
+	int between_curly_braces = 0;
 	int between_square_brackets = 0;
 
 	for (char e : s)
@@ -65,40 +67,43 @@ bool Solution::isValid(std::string s)
 		{
 			case '(':
 			{	
-				braces++;
-				if (braces == 1)//first brace
-					between_braces = total;
+				round_braces++;
+				//first brace
+				if (round_braces == 1)
+					between_round_braces = total;
 				break;
 			}
 			case ')':
 			{
-				braces--;
-				if (braces == 0)//found closed brace
+				round_braces--;
+				//corresponding closed bracket was found
+				if (round_braces == 0)
 				{
-					between_braces = total - between_braces - 1;
-					if (between_braces % 2 != 0)
+					between_round_braces = total - between_round_braces - 1;
+					//number of brackets must be even
+					if (between_round_braces % 2 != 0)
 						return false;
 				}
-					
 				break;
 			}
 			case '{':
 			{
 				curly_braces++;
-				if (curly_braces == 1)//first brace
+				//first brace
+				if (curly_braces == 1)
 					between_curly_braces = total;
 				break;
 			}
 			case '}':
 			{
 				curly_braces--;
-				if (curly_braces == 0)//found closed brace
+				//corresponding closed bracket was found
+				if (curly_braces == 0)
 				{
 					between_curly_braces = total - between_curly_braces - 1;
 					if (between_curly_braces % 2 != 0)
 						return false;
 				}
-					
 				break;
 			}
 			case '[':
@@ -111,21 +116,22 @@ bool Solution::isValid(std::string s)
 			case ']':
 			{
 				square_brackets--;
-				if (square_brackets == 0)//found closed brace
+				if (square_brackets == 0)//corresponding closed bracket was found
 				{
 					between_square_brackets = total - between_square_brackets - 1;
 					if (between_square_brackets % 2 != 0)
 						return false;
 				}
-					
 				break;
 			}
 		}
+
 		prev = e;
-		if (braces < 0 || curly_braces < 0 || square_brackets < 0)
+
+		if (round_braces < 0 || curly_braces < 0 || square_brackets < 0)
 		{
 			return false;
 		}
 	}
-	return braces == 0 && curly_braces == 0 && square_brackets == 0;
+	return round_braces == 0 && curly_braces == 0 && square_brackets == 0;
 }
