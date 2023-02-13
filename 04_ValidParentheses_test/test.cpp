@@ -1,13 +1,24 @@
 #include "pch.h"
 #include "../04_ValidParentheses/04_ValidParentheses.h"
 
-TEST(Palindrom, ValidBraces) {
+TEST(ValidParentheses, ValidBraces) {
 
 	Solution s;
 
 	EXPECT_EQ(s.isValid("()[]{}"), true);
 	EXPECT_EQ(s.isValid("([]){([])}"), true);
 	EXPECT_EQ(s.isValid("(([]){})"), true);
+
+}
+
+
+
+TEST(ValidParentheses, InvalidBraces) {
+
+	Solution s;
+	EXPECT_EQ(s.isValid("[([]])"), false);
+	EXPECT_EQ(s.isValid("[({])}"), false);
+	EXPECT_EQ(s.isValid("(([]){)}"), false);
 
 }
 
