@@ -18,19 +18,12 @@ int Solution::removeDuplicates(std::vector<int>& nums)
 	int i = 1;
 	while (i < nums.size())
 	{
-		if (nums[i - 1] == nums[i])
-		{
-			i++;
-			if (i == nums.size())
-				return insert_pos;
-		}
-		else
+		if (nums[i - 1] != nums[i])
 		{
 			nums[insert_pos] = nums[i];
 			insert_pos++;
-			i++;
 		}
-		
+		i++;
 	}
 	return insert_pos;
 }
