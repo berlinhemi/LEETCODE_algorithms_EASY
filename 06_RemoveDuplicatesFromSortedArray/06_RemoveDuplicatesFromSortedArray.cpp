@@ -18,6 +18,7 @@ int Solution::removeDuplicates(std::vector<int>& nums)
 	int i = 1;
 	while (i < nums.size())
 	{
+		//non-repeating element found
 		if (nums[i - 1] != nums[i])
 		{
 			nums[insert_pos] = nums[i];
