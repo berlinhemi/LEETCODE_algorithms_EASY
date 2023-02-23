@@ -17,19 +17,18 @@ int Solution::searchInsert(std::vector<int>& nums, int target)
 	{
 		mid = begin + (end - begin) / 2;
 		if (nums[mid] == target)
-		{
 			return mid;
-		}
-		else if (end - begin == 1)
-			break; 
-		if (nums[mid] < target)
-		{		
-			begin += (end - begin) / 2;
-		}
+		
 		else
 		{
-			end -= (end - begin) / 2;
-		}	
+			//need to stop search if item is not found
+			if (end - begin == 1)
+				break;
+			if (nums[mid] < target)
+				begin += (end - begin) / 2;
+			else
+				end -= (end - begin) / 2;
+		}
 	}
 	return target < nums[0] ? mid : mid + 1;
 }
