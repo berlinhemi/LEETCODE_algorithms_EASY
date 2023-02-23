@@ -21,8 +21,7 @@ int Solution::removeDuplicates(std::vector<int>& nums)
 		//non-repeating element found
 		if (nums[i - 1] != nums[i])
 		{
-			nums[insert_pos] = nums[i];
-			insert_pos++;
+			nums[insert_pos++] = nums[i];
 		}
 		i++;
 	}
