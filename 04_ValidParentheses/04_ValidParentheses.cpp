@@ -7,6 +7,8 @@ Open brackets must be closed by the same type of brackets.
 Open brackets must be closed in the correct order.
 Every close bracket has a corresponding open bracket of the same type.
 */
+#include <stack>
+#include <map>
 #include "04_ValidParentheses.h"
 
 
@@ -41,7 +43,8 @@ bool Solution::NextBraceIsValid(char prev, char next)
 	
 	return true;
 }
-bool Solution::isValid(std::string s)
+
+bool Solution::isValid1(std::string s)
 {
 	char prev = '-';
 
@@ -62,11 +65,11 @@ bool Solution::isValid(std::string s)
 		{
 			return false;
 		}
-		
+
 		switch (e)
 		{
 			case '(':
-			{	
+			{
 				round_braces++;
 				//first brace
 				if (round_braces == 1)
@@ -134,4 +137,45 @@ bool Solution::isValid(std::string s)
 		}
 	}
 	return round_braces == 0 && curly_braces == 0 && square_brackets == 0;
+}
+
+bool Solution::isValid2(std::string s)
+{
+	std::stack<char> stack;
+	std::map<char, char> map{	{')','('},
+								{']','['},
+								{'}','{'}
+							};
+	for (char e : s)
+	{
+		if (!stack.empty())
+		{
+			if (map.find(e) != map.end())
+			{
+				if (map[e] == stack.top())
+				{
+					stack.pop();
+				}
+				else
+				{
+					return false;
+				}
+			}
+			else
+			{
+				stack.push(e);
+			}
+		}
+		else
+		{
+			stack.push(e);
+		}
+	}
+	return stack.empty();
+}
+
+
+bool Solution::isValid(std::string s)
+{
+	return isValid2(s);
 }
