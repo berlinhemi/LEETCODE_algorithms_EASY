@@ -150,8 +150,10 @@ bool Solution::isValid2(std::string s)
 	{
 		if (!stack.empty())
 		{
+			//if closed brace was found
 			if (map.find(e) != map.end())
 			{
+				//check if previous brace is opening with same type
 				if (map[e] == stack.top())
 				{
 					stack.pop();
@@ -161,6 +163,7 @@ bool Solution::isValid2(std::string s)
 					return false;
 				}
 			}
+			//open brace
 			else
 			{
 				stack.push(e);
