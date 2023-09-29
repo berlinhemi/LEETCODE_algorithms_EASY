@@ -36,7 +36,7 @@ std::vector<int> Solution::plusOne(std::vector<int>& digits)
 	for (int i = digits.size() - 1; i >= 0; i--)
 	{
 		result[i] = getNextDigitWithCarry(digits[i], carry);
-		..if there is a carry at the end
+		//if there is a carry at the end
 		if (i == 0 && carry)
 		{
 			result.insert(result.begin(), 1);
