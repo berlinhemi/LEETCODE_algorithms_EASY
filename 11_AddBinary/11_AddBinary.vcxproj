@@ -141,6 +141,9 @@
   <ItemGroup>
     <ClCompile Include="11_AddBinary.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="11_AddBinary.h" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
