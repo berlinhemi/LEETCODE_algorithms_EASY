@@ -13,6 +13,12 @@ Output: [1,0]
 */
 #include "10_PlusOne.h"
 
+/// <summary>
+/// Calculate the next digit, with the transfer of the discharge
+/// </summary>
+/// <param name="value">initial digit</param>
+/// <param name="carry">сarryover on addition</param>
+/// <returns>result digit</returns>
 int Solution::getNextDigitWithCarry(int value, bool& carry)
 {
 	if (value == 9 && carry)
@@ -36,7 +42,7 @@ std::vector<int> Solution::plusOne(std::vector<int>& digits)
 	for (int i = digits.size() - 1; i >= 0; i--)
 	{
 		result[i] = getNextDigitWithCarry(digits[i], carry);
-		..if there is a carry at the end
+		//if there is a carry at the end
 		if (i == 0 && carry)
 		{
 			result.insert(result.begin(), 1);
