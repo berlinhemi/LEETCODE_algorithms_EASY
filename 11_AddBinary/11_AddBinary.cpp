@@ -4,10 +4,14 @@ char Solution::SumBinDigits(char a, char b, char& rem)
 {
 	char result = '0';
 
-	if (a == '0' && b == '0' && rem == '1')
+	if (a == '0' && b == '0')
 	{
-		result = '1';
-		rem = '0';		
+		if (rem == '1')
+		{
+			result = '1';
+			rem = '0';
+		}
+			
 	}
 	else if (a == '1' && b == '1')
 	{

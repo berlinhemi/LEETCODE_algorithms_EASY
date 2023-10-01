@@ -6,5 +6,5 @@ int main()
     Solution s;
 
 
-    std::cout << s.addBinary("1010","1011");
+    std::cout << s.addBinary("0","0");
 }
