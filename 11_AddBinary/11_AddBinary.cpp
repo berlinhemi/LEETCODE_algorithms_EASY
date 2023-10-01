@@ -48,8 +48,10 @@ std::string Solution::addBinary(std::string a, std::string b)
 			long_str[i] = SumBinDigits(long_str[i], short_str[j], rem);
 		}
 		else
-		{
+		{	
 			long_str[i] = SumBinDigits(long_str[i], '0', rem);
+			if (rem == '0')
+				break;
 		}	
 	}
 	if (rem == '1')
