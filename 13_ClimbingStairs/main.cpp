@@ -5,5 +5,5 @@ int main()
 {
     std::cout << "Hello World!\n";
     Solution s;
-    std::cout << s.climbStairs(6);
+    std::cout << s.climbStairs(45);
 }

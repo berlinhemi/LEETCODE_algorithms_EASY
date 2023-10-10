@@ -1,8 +1,8 @@
 #pragma once
 class Solution {
 private:
-    int fact(int n);
+    double fact(int n);
     int climbStairs_rec(int n);
 public:
-    int climbStairs(int n);
+    double climbStairs(int n);
 };
