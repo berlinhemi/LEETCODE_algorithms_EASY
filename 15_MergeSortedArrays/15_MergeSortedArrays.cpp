@@ -6,52 +6,89 @@
 void Solution::merge(std::vector<int>& nums1, int m, std::vector<int>& nums2, int n)
 {
 
-	//for (int i = 0, j = 0; i < m + n && j < n;);
 	std::queue<int> q;
 	int i = 0;
 	int j = 0;
 	while (i < m + n)
 	{
-		if (!q.empty())
+		if (i < m)
 		{
-			if (j < n)
+			if (q.empty())
 			{
-				if (nums2[j] > q.front())
+				if (j < n)
 				{
-					if (nums1[i] == 0)
-					{
-						nums1[i] = q.front();
-					}
-					else if (nums1[i] > q.front())
+					if (nums1[i] > nums2[j])
 					{
 						q.push(nums1[i]);
-						nums1[i] = q.front();
+						nums1[i] = nums2[j];
+						j++;
 					}
-					q.pop();
 				}
 			}
 			else
 			{
-				
+				int q_item = q.front();
+				if (j < n)
+				{
+					if (q_item <= nums2[j] && q_item < nums1[i])
+					{
+						q.push(nums1[i]);
+						nums1[i] = q_item;
+						q.pop();
+					}
+					else if (nums2[j] <= q_item && nums2[j] < nums1[i])
+					{
+						q.push(nums1[i]);
+						nums1[i] = nums2[j];
+						j++;
+					}
+				}
+				else
+				{
+					if (q_item < nums1[i])
+					{
+						q.push(nums1[i]);
+						nums1[i] = q_item;
+						q.pop();
+					}
+				}
 			}
 		}
-		else if (j < n)
+		else
 		{
-			if (nums1[i] == 0)
+			if (q.empty())
 			{
-				nums1[i] = nums2[j];
-				j++;
+				if (j < n)
+				{
+					nums1[i] = nums2[j];
+					j++;
+				}
 			}
-			else if (nums1[i] > nums2[j])
+			else
 			{
-				q.push(nums1[i]);
-				nums1[i] = nums2[j];		
-				j++;
+				int q_item = q.front();
+				if (j < n)
+				{
+					if (q_item < nums2[j])
+					{
+						nums1[i] = q_item;
+						q.pop();
+					}
+					else
+					{
+						nums1[i] = nums2[j];
+						j++;
+					}
+				}
+				else
+				{
+					nums1[i] = q_item;
+					q.pop();
+				}
 			}
-			
 		}
-		
-		
+
+
 		i++;
 	}
 }
