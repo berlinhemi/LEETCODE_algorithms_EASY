@@ -37,6 +37,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "14_RemoveDupInSortedList", 
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "15_MergeSortedArrays", "15_MergeSortedArrays\15_MergeSortedArrays.vcxproj", "{D3720F0D-8D1E-45BC-A745-676D47949AD2}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "16_Binary_Tree_Inorder_Traversal", "16_Binary_Tree_Inorder_Traversal\16_Binary_Tree_Inorder_Traversal.vcxproj", "{580DDF0D-E7F0-4623-BBAF-211982DA6C1D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -181,6 +183,14 @@ Global
 		{D3720F0D-8D1E-45BC-A745-676D47949AD2}.Release|x64.Build.0 = Release|x64
 		{D3720F0D-8D1E-45BC-A745-676D47949AD2}.Release|x86.ActiveCfg = Release|Win32
 		{D3720F0D-8D1E-45BC-A745-676D47949AD2}.Release|x86.Build.0 = Release|Win32
+		{580DDF0D-E7F0-4623-BBAF-211982DA6C1D}.Debug|x64.ActiveCfg = Debug|x64
+		{580DDF0D-E7F0-4623-BBAF-211982DA6C1D}.Debug|x64.Build.0 = Debug|x64
+		{580DDF0D-E7F0-4623-BBAF-211982DA6C1D}.Debug|x86.ActiveCfg = Debug|Win32
+		{580DDF0D-E7F0-4623-BBAF-211982DA6C1D}.Debug|x86.Build.0 = Debug|Win32
+		{580DDF0D-E7F0-4623-BBAF-211982DA6C1D}.Release|x64.ActiveCfg = Release|x64
+		{580DDF0D-E7F0-4623-BBAF-211982DA6C1D}.Release|x64.Build.0 = Release|x64
+		{580DDF0D-E7F0-4623-BBAF-211982DA6C1D}.Release|x86.ActiveCfg = Release|Win32
+		{580DDF0D-E7F0-4623-BBAF-211982DA6C1D}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
