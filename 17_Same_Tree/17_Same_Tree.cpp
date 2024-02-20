@@ -52,9 +52,7 @@ std::vector<int> Solution::runTravers(TreeNode* root)
 bool Solution::isSameTree(TreeNode* p, TreeNode* q)
 {
     std::vector<int> travers1 = runTravers(p);
-    //inorderTraversal(p, travers1);
     std::vector<int> travers2 = runTravers(q);
-    // inorderTraversal(q, travers2);
     if (travers1.size() != travers2.size())
     {
         return false;
