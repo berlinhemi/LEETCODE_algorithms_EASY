@@ -15,64 +15,20 @@ struct TreeNode
 };
 
 class Solution {
-private:
-    void preorderLeftFirstTraversal(TreeNode* root, std::vector<int>& travers, int l = 0, int r = 0);
-    void preorderRigthFirstTraversal(TreeNode* root, std::vector<int>& travers, int l = 0, int r = 0);
+    bool walk(TreeNode* l, TreeNode* r);
 public:
     bool isSymmetric(TreeNode* root);
 };
 
 
-
-void Solution::preorderLeftFirstTraversal(TreeNode* root, std::vector<int>& travers, int l , int r )
+bool Solution::walk(TreeNode* l, TreeNode* r)
 {
-
-    if (!root)
-    {
-        return;
-    }
-   
-    travers.push_back(root->val);
-    //travers.push_back(h);
-    if (root->left)
-    {
-        travers.push_back(l-1);
-        //travers.push_back(r);
-        preorderLeftFirstTraversal(root->left, travers, l-1, r);
-    }
-    travers.push_back(100);
-    if (root->right)
-    {
-        //travers.push_back(l);
-        travers.push_back(r+1);
-        preorderLeftFirstTraversal(root->right, travers, l, r+1);
-    }
-
+    if (!l || !r) 
+        return l == r;
+    if (l->val != r->val)
+        return false;
+    return walk(l->left, r->right) && walk(l->right, r->left);
 }
-
-void Solution::preorderRigthFirstTraversal(TreeNode* root, std::vector<int>& travers, int l , int r )
-{
-    if (!root)
-    {
-        return;
-    }
-    travers.push_back(root->val);
-   // travers.push_back(h);
-    if (root->right)
-    {
-        //travers.push_back(l);
-        travers.push_back(r-1);
-        preorderRigthFirstTraversal(root->right, travers, l, r-1);
-    }
-    travers.push_back(100);
-    if (root->left)
-    {
-        travers.push_back(l+1);
-        //travers.push_back(r);
-        preorderRigthFirstTraversal(root->left, travers, l+1, r);
-    }
-}
-
 
 bool Solution::isSymmetric(TreeNode* root)
 {
@@ -84,25 +40,8 @@ bool Solution::isSymmetric(TreeNode* root)
         return false;
     if (root->left != nullptr && root->right == nullptr)
         return false;
-  
     
-    std::vector<int> traversLeft;
-    //int height = 0;
-    preorderLeftFirstTraversal(root->left, traversLeft);
-
-    std::vector<int> traversRight;
-    //height = 0;
-    preorderRigthFirstTraversal(root->right, traversRight);
-    if (traversLeft.size() != traversRight.size())
-    {
-        return false;
-    }
-    for (int i = 0; i < traversLeft.size(); i++)
-    {
-        if (traversLeft[i] != traversRight[i])
-            return false;
-    }
-    return true;
+    return walk(root->left, root->right);
 }
 
 
