@@ -44,9 +44,11 @@ private:
        
     }
 public:
-    TreeNode* sortedArrayToBST(std::vector<int>& nums) {
-        TreeNode* root = new TreeNode();
-        appendChilds(root, nums, 0, nums.size()-1);
+    TreeNode* sortedArrayToBST(std::vector<int>& nums) 
+    {
+        size_t mid = 0 + (nums.size() - 1) / 2;
+        TreeNode* root = new TreeNode(nums[mid]);
+        appendChilds(root, nums, 0, nums.size() - 1);
         return root;
     }
 };
