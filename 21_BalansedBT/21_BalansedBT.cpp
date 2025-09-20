@@ -30,10 +30,8 @@ public:
     bool isBalanced(TreeNode* node) {
         if (!node)
             return true;
-        if (!node->left && !node->right)
-            return true;
         int diff = std::abs(maxDepth(node->left) - maxDepth(node->right));
-        std::cout << "node:" << node->val << " diff:" << diff << std::endl;
+        //std::cout << "node:" << node->val << " diff:" << diff << std::endl;
         if (diff > 1)
             return false;
         return isBalanced(node->left) && isBalanced(node->right);
