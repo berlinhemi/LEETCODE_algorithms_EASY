@@ -24,7 +24,6 @@ public:
         return curr;
 
     }
-    
 };
 
 int main()
