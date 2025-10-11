@@ -59,6 +59,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "24_PascalTriangle", "24_Pas
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "25_PascalTriangle2", "25_PascalTriangle2\25_PascalTriangle2.vcxproj", "{1F89D130-B0CA-4223-8FC6-E4237A8B6366}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "26_BuyAndSellStock", "26_BuyAndSellStock\26_BuyAndSellStock.vcxproj", "{27AA5599-3E8B-4088-8AF5-0B5E0F3476F1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -291,6 +293,14 @@ Global
 		{1F89D130-B0CA-4223-8FC6-E4237A8B6366}.Release|x64.Build.0 = Release|x64
 		{1F89D130-B0CA-4223-8FC6-E4237A8B6366}.Release|x86.ActiveCfg = Release|Win32
 		{1F89D130-B0CA-4223-8FC6-E4237A8B6366}.Release|x86.Build.0 = Release|Win32
+		{27AA5599-3E8B-4088-8AF5-0B5E0F3476F1}.Debug|x64.ActiveCfg = Debug|x64
+		{27AA5599-3E8B-4088-8AF5-0B5E0F3476F1}.Debug|x64.Build.0 = Debug|x64
+		{27AA5599-3E8B-4088-8AF5-0B5E0F3476F1}.Debug|x86.ActiveCfg = Debug|Win32
+		{27AA5599-3E8B-4088-8AF5-0B5E0F3476F1}.Debug|x86.Build.0 = Debug|Win32
+		{27AA5599-3E8B-4088-8AF5-0B5E0F3476F1}.Release|x64.ActiveCfg = Release|x64
+		{27AA5599-3E8B-4088-8AF5-0B5E0F3476F1}.Release|x64.Build.0 = Release|x64
+		{27AA5599-3E8B-4088-8AF5-0B5E0F3476F1}.Release|x86.ActiveCfg = Release|Win32
+		{27AA5599-3E8B-4088-8AF5-0B5E0F3476F1}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
