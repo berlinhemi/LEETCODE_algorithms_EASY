@@ -8,7 +8,30 @@ public:
 
     bool isPalindrome(std::string s) 
     {
-    
+		int i = 0;
+		int j = s.size() - 1;
+
+		while (i <= j)
+		{
+			bool i_ok = isalnum(tolower(s[i]));
+			bool j_ok = isalnum(tolower(s[j]));
+
+			if (i_ok && j_ok)
+			{
+				if (tolower(s[i]) != tolower(s[j]))
+					return false;
+				i++;
+				j--;
+			}
+			else
+			{
+				if (!i_ok)
+					i++;
+				if (!j_ok)
+					j--;
+			}
+		}
+			return true;
     }
 };
 
