@@ -23,6 +23,7 @@ public:
 				i++;
 				j--;
 			}
+			// Skip non-alphanum symbol if exists
 			else
 			{
 				if (!i_ok)
@@ -31,7 +32,7 @@ public:
 					j--;
 			}
 		}
-			return true;
+		return true;
     }
 };
 
