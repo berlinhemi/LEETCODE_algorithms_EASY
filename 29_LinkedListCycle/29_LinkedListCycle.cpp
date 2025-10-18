@@ -73,3 +73,12 @@ int main()
     
     //s.PrintList(s.mergeTwoLists(nullptr, nullptr));
 }
+
+///////////////////
+// +second solution with O(1) space comlexity
+
+//This approach utilizes two pointers, slow and fast.
+//Initially, slow starts at the head, and fast starts at the second node(head->next).
+//The slow pointer moves one step at a time, while the fast pointer moves two steps.
+//If there is a cycle, the fast pointer will eventually meet the slow pointer within the cycle.
+//If fast reaches the end of the list(NULL), it means there is no cycle.
