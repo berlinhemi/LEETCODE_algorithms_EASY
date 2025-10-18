@@ -16,7 +16,7 @@
  class Solution 
  {
     private:
-     static bool isItemInSet(const std::unordered_set<int>& items, int item) 
+     static bool isItemInSet(const std::unordered_set<ListNode*>& items, ListNode* item)
      {
          return items.find(item) != items.end();
      }
@@ -34,13 +34,13 @@
 
         bool hasCycle(ListNode* head) 
         {
-            std::unordered_set<int> items;
+            std::unordered_set<ListNode*> node_addresses;
             ListNode* ptr = head;
             while (ptr != nullptr)
             {
-                if (isItemInSet(items, ptr->val))
+                if (isItemInSet(node_addresses, ptr))
                     return true;
-                items.insert(ptr->val);
+                node_addresses.insert(ptr);
                 ptr = ptr->next;
             }
             return false;
@@ -59,7 +59,7 @@ int main()
 
     ListNode ln21(1);
     ListNode ln22(2, &ln21);
-    ListNode ln23(3, &ln22);
+    ListNode ln23(4, &ln22);
     ListNode ln24(4, &ln23);
     ListNode ln25(5, &ln24);
 
