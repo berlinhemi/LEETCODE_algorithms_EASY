@@ -69,6 +69,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "29_LinkedListCycle", "29_Li
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "30_PreorderTraversal", "30_PreorderTraversal\30_PreorderTraversal.vcxproj", "{2761C31E-3A6A-4549-863E-CB2A852BBB9E}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "31_PostOrderTraversal", "31_PostOrderTraversal\31_PostOrderTraversal.vcxproj", "{B7962535-DB2D-49BC-AA03-1742BEFE4625}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -341,6 +343,14 @@ Global
 		{2761C31E-3A6A-4549-863E-CB2A852BBB9E}.Release|x64.Build.0 = Release|x64
 		{2761C31E-3A6A-4549-863E-CB2A852BBB9E}.Release|x86.ActiveCfg = Release|Win32
 		{2761C31E-3A6A-4549-863E-CB2A852BBB9E}.Release|x86.Build.0 = Release|Win32
+		{B7962535-DB2D-49BC-AA03-1742BEFE4625}.Debug|x64.ActiveCfg = Debug|x64
+		{B7962535-DB2D-49BC-AA03-1742BEFE4625}.Debug|x64.Build.0 = Debug|x64
+		{B7962535-DB2D-49BC-AA03-1742BEFE4625}.Debug|x86.ActiveCfg = Debug|Win32
+		{B7962535-DB2D-49BC-AA03-1742BEFE4625}.Debug|x86.Build.0 = Debug|Win32
+		{B7962535-DB2D-49BC-AA03-1742BEFE4625}.Release|x64.ActiveCfg = Release|x64
+		{B7962535-DB2D-49BC-AA03-1742BEFE4625}.Release|x64.Build.0 = Release|x64
+		{B7962535-DB2D-49BC-AA03-1742BEFE4625}.Release|x86.ActiveCfg = Release|Win32
+		{B7962535-DB2D-49BC-AA03-1742BEFE4625}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
