@@ -20,19 +20,12 @@ public:
 		ListNode* ptr1 = headA;
 		ListNode* ptr2 = headB;
 
-		//result = (ptr1->val < ptr2->val) ? ptr1 : ptr2;
-		//if (ptr1->val < ptr2->val)
-		//	ptr1 = ptr1->next;
-		//else
-		//	ptr2 = ptr2->next;
-
-		//ListNode* end = nullptr;
 		std::unordered_set<ListNode*> visited;
 		while (ptr1 || ptr2)
 		{
 			if (ptr1)
 			{
-				if (ptr1 && !visited.count(ptr1))
+				if (visited.count(ptr1) != 0)
 					visited.insert(ptr1);
 				else
 					return ptr1;
@@ -43,7 +36,7 @@ public:
 
 			if (ptr2)
 			{
-				if (!visited.count(ptr2))
+				if (visited.count(ptr2) != 0)
 					visited.insert(ptr2);
 				else
 					return ptr2;
