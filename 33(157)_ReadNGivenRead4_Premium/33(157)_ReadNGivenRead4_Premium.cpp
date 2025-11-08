@@ -26,7 +26,9 @@ private:
     FileReader reader;
 public:
     Solution(const char* file_content) : reader(file_content) {}
+    
     void reset() { reader.reset(); }
+    
     int read(char* buf, int n)
     {
         char block[block_size]{};
@@ -35,7 +37,6 @@ public:
         int iterations = static_cast<int>(std::ceil((double)n / block_size));
         for (int i = 0; i < iterations; i++)
         {
-            memset(block, 0, block_size);
             int chars_last_read = reader.read4(block);
             // last iteration
             if (i == iterations - 1)
